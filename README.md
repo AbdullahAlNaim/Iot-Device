@@ -62,6 +62,7 @@ python manage.py makemigrations devices
 python manage.py migrate
 ```
 
+
 #### Run the server
 ```bash
 python manage.py runserver
@@ -90,7 +91,13 @@ copy the token and paste into request headers
 ```bash
 Authorization: Token your_token_here
 ```
+## Running Tests
 
+To ensure the app is working correctly, you can run:
+
+```bash
+python manage.py test devices/tests
+```
 
 ## Example Payload
 POST endpoint
