@@ -20,50 +20,49 @@ A Django REST Framework application for ingesting and processing payloads from I
 
 
 #### Clone the Repo
-```json
+```bash
 git clone https://github.com/abdullahalnaim/iot-device-api.git
 cd iot-device-api
 ```
 
 #### Create the virtaul env
-```json
+```bash
 python -m venv venv
 ```
 
 #### Install dependencies
-```json
+```bash
 pip install -r requirements.txt
 ```
 
 #### Create .env file
-```json
+```bash
 DJANGO_SECRET_KEY=your_very_secret_key
 ```
 You can generate one secret key using Python
-```json
+```bash
 python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
 ```
 
 #### Apply migrations and create superuser
-```json
+```bash
 python manage.py migrate
 python manage.py createsuperuser
-```
+``` = Authorization: Token your_token_here
+
+# # # # # 
 
 #### Run the server
-```json
+```bash
 python manage.py runserver
 ```
 
 ## API Authentication
+Authorization: Token your_token_here
 
-#### Obtain a token
-```json
-POST /api-token-auth/
-```
 
 with body
-```json
+```bash
 {
   "username": "your-username",
   "password": "your-password"
@@ -71,7 +70,7 @@ with body
 ```
 
 #### Include the token
-```json
+```bash
 Authorization: Token your_token_here
 ```
 
