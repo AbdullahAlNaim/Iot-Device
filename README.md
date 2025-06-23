@@ -30,6 +30,8 @@ cd iot-device-api
 python -m venv venv
 ```
 
+Run virtual env after install.
+
 #### Install dependencies
 ```bash
 pip install -r requirements.txt
@@ -39,7 +41,7 @@ pip install -r requirements.txt
 ```bash
 DJANGO_SECRET_KEY=your_very_secret_key
 ```
-You can generate one secret key using Python
+You can generate one secret key using Python.
 ```bash
 python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
 ```
@@ -49,16 +51,31 @@ python -c 'from django.core.management.utils import get_random_secret_key; print
 python manage.py migrate
 python manage.py createsuperuser
 ```
+Check if the 2 models were created. Can check with:
+```bash
+python manage.py showmigrations
+```
 
+If it wasn't created, create the migration for the specific model.
+```bash
+python manage.py makemigrations devices
+python manage.py migrate
+```
 
 #### Run the server
 ```bash
 python manage.py runserver
 ```
 
-## API Authentication
+## API Authentication Required
 Authorization: Token your_token_here
 
+Steps to acuire token:
+
+POST url
+```bash
+http://localhost:8000/api-token-auth/
+```
 
 with body
 ```bash
@@ -67,6 +84,7 @@ with body
   "password": "your-password"
 }
 ```
+copy the token and paste into request headers
 
 #### Include the token
 ```bash
@@ -75,6 +93,11 @@ Authorization: Token your_token_here
 
 
 ## Example Payload
+POST endpoint
+```bash
+http://localhost:8000/api/payloads/
+```
+Body
 
 ```json
 {
