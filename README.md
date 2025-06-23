@@ -30,7 +30,7 @@ cd iot-device-api
 python -m venv venv
 ```
 
-Run virtual env after install.
+Run virtual env.
 
 #### Install dependencies
 ```bash
