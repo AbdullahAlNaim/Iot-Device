@@ -7,9 +7,6 @@ class DeviceSerializer(serializers.ModelSerializer):
         model = Device
         fields = '__all__'
 
-from rest_framework import serializers
-from .models import Device, Payload
-import base64
 
 class PayloadSerializer(serializers.ModelSerializer):
     devEUI = serializers.CharField(write_only=True)

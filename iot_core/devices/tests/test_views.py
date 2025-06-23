@@ -30,7 +30,7 @@ class Test_DeviceViewSet(TestBase, APITestCase):
         self.assertEqual(Device.objects.count(), 2)
 
     def test_device_list_requires_auth(self):
-        self.client.credentials()  # remove token
+        self.client.credentials()  
         url = reverse('device-list')
         response = self.client.get(url)
         self.assertEqual(response.status_code, 401)
@@ -91,7 +91,7 @@ class Test_PayloadViewSet(TestBase, APITestCase):
         self.assertIn("Duplicate fCnt for this device.", response.data["non_field_errors"][0])
 
     def test_payload_list_requires_auth(self):
-        self.client.credentials()  # remove token
+        self.client.credentials()  
         url = reverse('payload-list')
         response = self.client.get(url)
         self.assertEqual(response.status_code, 401)

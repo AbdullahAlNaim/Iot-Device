@@ -18,7 +18,7 @@ class TestSerializer(TestBase):
     def test_duplicate_fcnt_error(self):
         duplicate_data = self.payload_data.copy()
         duplicate_data['devEUI'] = self.device.dev_eui
-        duplicate_data.pop('device', None)  # remove 'device' key if present
+        duplicate_data.pop('device', None) 
 
         serializer = PayloadSerializer(data=duplicate_data)
         self.assertFalse(serializer.is_valid())
@@ -52,7 +52,7 @@ class TestSerializer(TestBase):
         new_payload_data = self.payload_data.copy()
         new_payload_data['devEUI'] = self.device.dev_eui
         new_payload_data['fcnt'] = 202
-        new_payload_data['data'] = 'Ag=='  # base64 of 0x02
+        new_payload_data['data'] = 'Ag==' 
         new_payload_data.pop('device', None)
 
         serializer = PayloadSerializer(data=new_payload_data)
