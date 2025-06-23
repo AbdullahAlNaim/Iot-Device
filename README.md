@@ -48,9 +48,8 @@ python -c 'from django.core.management.utils import get_random_secret_key; print
 ```bash
 python manage.py migrate
 python manage.py createsuperuser
-``` = Authorization: Token your_token_here
+```
 
-# # # # # 
 
 #### Run the server
 ```bash
